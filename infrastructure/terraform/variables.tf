@@ -1,6 +1,6 @@
 variable "service_id" {
   type        = string
-  default     = "getpolvo"
+  default     = "get-polvo"
   description = "The id of the service. Should be a single word"
 }
 
