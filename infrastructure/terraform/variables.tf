@@ -22,12 +22,6 @@ variable "region" {
   description = "The region"
 }
 
-variable "env" {
-  type        = string
-  default     = "develop"
-  description = "The environment"
-}
-
 variable "docker_image_url" {
   type        = string
   description = "The image digest"

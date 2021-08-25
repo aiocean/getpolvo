@@ -13,10 +13,6 @@ Nhưng Proxy này lấy dữ liệu từ database hay từ polvo service. Mình 
 
 > Các command dưới này để được gọi trong Cloud Shell.
 
-Cái này cần build bằng Google Cloud Build và terraform.
-
-Terraform cần phải lưu lại stage của nó, nên sử dụng gcs để lưu stage.
-
 1. In Cloud Shell, create the Cloud Storage bucket:
 
 ```
