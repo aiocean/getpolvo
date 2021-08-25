@@ -21,7 +21,7 @@ steps:
     - '-c'
     - |
       cd infrastructure/terraform
-      terraform refresh
+      terraform refresh -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA"
 
   # plan
   - name: 'hashicorp/terraform:1.0.5'
