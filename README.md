@@ -10,13 +10,13 @@ Proxy server giữa frontend và backend.
 
 ```
 PROJECT_ID=$(gcloud config get-value project)
-gsutil mb gs://${PROJECT_ID}-tfstate
+gsutil mb gs://tfstate__${PROJECT_ID}
 ```
 
 2. Enable Object Versioning to keep the history of your deployments:
 
 ```
-gsutil versioning set on gs://${PROJECT_ID}-tfstate
+gsutil versioning set on gs://tfstate__${PROJECT_ID}
 ```
 
 3. Cấp quyền cho account build
@@ -30,7 +30,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member serviceAccount:$CLOU
 4. Tạo build trigger với substitution variables: 
 
 ```
-_ENV: main
+_ENV: prod
 ```
 
 `_ENV` này là môi trường đang build, nó sẽ quyết định sự khác biệt về resource.
