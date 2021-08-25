@@ -26,3 +26,11 @@ CLOUDBUILD_SA="$(gcloud projects describe $PROJECT_ID --format 'value(projectNum
 gcloud projects add-iam-policy-binding $PROJECT_ID --member serviceAccount:$CLOUDBUILD_SA --role roles/editor
 gcloud projects add-iam-policy-binding $PROJECT_ID --member serviceAccount:$CLOUDBUILD_SA --role roles/run.admin
 ```
+
+4. Tạo build trigger với substitution variables: 
+
+```
+_ENV: main
+```
+
+`_ENV` này là môi trường đang build, nó sẽ quyết định sự khác biệt về resource.
