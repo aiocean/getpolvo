@@ -12,7 +12,7 @@ steps:
     - '-c'
     - |
       cd infrastructure/terraform
-      terraform init -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA" -reconfigure -backend-config="bucket=$PROJECT_ID-tfstate" -backend-config="bucket=getpolvo/$_ENV"
+      terraform init -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA" -reconfigure -backend-config="bucket=$PROJECT_ID-tfstate" -backend-config="prefix=getpolvo/$_ENV"
   # plan
   - id: 'Apply terraform'
     name: 'hashicorp/terraform:1.0.5'
