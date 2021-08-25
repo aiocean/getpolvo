@@ -21,4 +21,4 @@ steps:
     - '-c'
     - |
       cd infrastructure/terraform
-      terraform plan -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA" -reconfigure -backend-config="bucket=$PROJECT_ID-tfstate"
+      terraform plan -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA"
