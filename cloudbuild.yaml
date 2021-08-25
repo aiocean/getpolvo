@@ -22,3 +22,12 @@ steps:
     - |
       cd infrastructure/terraform
       terraform plan -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA"
+
+  # plan
+  - name: 'hashicorp/terraform:1.0.5'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - |
+      cd infrastructure/terraform
+      terraform apply -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA"
