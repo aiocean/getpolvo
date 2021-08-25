@@ -30,4 +30,4 @@ steps:
     - '-c'
     - |
       cd infrastructure/terraform
-      terraform apply -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA"
+      terraform apply -auto-approve -var="docker_image_url=gcr.io/$PROJECT_ID/getpolvo:$SHORT_SHA"
