@@ -2,7 +2,9 @@ steps:
   # Build image
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/getpolvo:$BRANCH_NAME', '.' ]
-    images: ['gcr.io/$PROJECT_ID/getpolvo:$BRANCH_NAME']
+  # Push image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', 'gcr.io/$PROJECT_ID/getpolvo:$BRANCH_NAME' ]
   # init
 #  - name: 'hashicorp/terraform:1.0.5'
 #    entrypoint: 'sh'
