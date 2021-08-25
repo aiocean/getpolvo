@@ -17,14 +17,14 @@ resource "google_cloud_run_service" "default" {
     metadata {
       annotations = {
         "autoscaling.knative.dev/maxScale" = "100"
-        "client.knative.dev/user-image"    = local.docker_image_url
+        "client.knative.dev/user-image"    = var.docker_image_url
         "run.googleapis.com/client-name"   = "terraform"
       }
     }
     spec {
       container_concurrency = 80
       containers {
-        image = local.docker_image_url
+        image = var.docker_image_url
         ports {
           container_port = 8080
           name           = "h2c"
@@ -45,7 +45,7 @@ resource "google_cloud_run_service" "default" {
 
   metadata {
     annotations = {
-      "client.knative.dev/user-image"     = local.docker_image_url
+      "client.knative.dev/user-image"     = var.docker_image_url
       "run.googleapis.com/ingress"        = "all"
       "run.googleapis.com/ingress-status" = "all"
     }

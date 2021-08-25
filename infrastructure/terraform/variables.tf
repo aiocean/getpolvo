@@ -28,7 +28,7 @@ variable "env" {
   description = "The environment"
 }
 
-variable "image_digest" {
+variable "docker_image_url" {
   type        = string
   description = "The image digest"
 }
@@ -48,5 +48,4 @@ variable "polvo_service_address" {
 locals {
   service_domain    = "${var.service_id}.${var.service_base_domain}"
   service_full_name = "${var.service_id}-service"
-  docker_image_url = "gcr.io/${var.project_id}/${local.service_full_name}@${var.image_digest}"
 }
