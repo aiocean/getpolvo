@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "getpolvo-tfstate"
-    prefix = "env/develop"
+    bucket = "REPLACE_WITH_-backend-config"
+    prefix = "getpolvo/develop"
   }
 }
