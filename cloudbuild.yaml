@@ -1,0 +1,27 @@
+steps:
+  # init
+  - name: 'hashicorp/terraform:1.0.5'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - |
+      cd infrastructure/terraform
+      terraform init
+
+  # plan
+  - name: 'hashicorp/terraform:1.0.5'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - |
+      cd infrastructure/terraform
+      terraform plan
+
+  # apply
+  - name: 'hashicorp/terraform:1.0.5'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - |
+      cd infrastructure/terraform
+      terraform apply -auto-approve

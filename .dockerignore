@@ -1,0 +1,5 @@
+node_modules/
+infrastructure/
+.dockerignore
+.gcloudignore
+.gitignore
